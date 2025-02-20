@@ -1,23 +1,53 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# # dependencies
+# /node_modules
+# /.pnp
+# .pnp.js
 
-# testing
-/coverage
+# # testing
+# /coverage
 
-# production
-/build
+# # production
+# /build
 
-# misc
+# # misc
+# .DS_Store
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# Node.js dependencies for server
+node_modules/
+
+# Build output for server
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# OS-specific files
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
+# npm-debug files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# React build output (client-side)
+client/build/
+
+# Ignore node_modules in the React app inside the client folder
+client/node_modules/
+
+# React cache
+client/.cache/
