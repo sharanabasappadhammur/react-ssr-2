@@ -47,10 +47,19 @@ app.get("*", (req, res) => {
   const filePath = path.join(__dirname, "client/build", "index.html");
   let htmlContent = fs.readFileSync(filePath, "utf8");
 
-  htmlContent = htmlContent.replace(
-    /<\/head>/,
-    `<meta property="og:image" content="https://sample-videos.com/img/Sample-png-image-100kb.png" />\n</head>`
-  );
+  if (req.path === "/") {
+    htmlContent = htmlContent.replace(
+      /<\/head>/,
+      `<meta property="og:image" content="https://i.ytimg.com/vi/h6gXtS6jSX0/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AGOCIAC0AWKAgwIABABGGUgVyhMMA8=&rs=AOn4CLA7lzuyQnNM4A_6Q733tZQsJuJDRg" />\n</head>`
+    );
+  }
+
+  if (req.path === "/coffeenewsfeeds") {
+    htmlContent = htmlContent.replace(
+      /<\/head>/,
+      `<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd8P9RV-96KMhJK6EwQS-XoN1kdyF663o7EW0Eiu9LA1yliUOw-GkfOyOG2RTSqYhepjo&usqp=CAU" />\n</head>`
+    );
+  }
 
   console.log(htmlContent);
 
